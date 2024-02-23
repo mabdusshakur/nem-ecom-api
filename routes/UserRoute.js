@@ -21,7 +21,7 @@ router.route("/register").post(uploadAvatar, RegisterUser);
  * POST /login
  * Logs in the user using the LoginUser controller function.
  */
-router.route("/login").post(AuthMiddleware, LoginUser);
+router.route("/login").post(LoginUser);
 
 // Export the router
 module.exports = router;
