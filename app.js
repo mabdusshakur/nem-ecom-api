@@ -10,6 +10,8 @@ const host = process.env.SERVER_HOST;
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/uploads', express.static('uploads'));
+
 app.use("/api/v1/users", UserRouter);
 
 const startServer = async () => {
