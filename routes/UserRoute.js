@@ -6,6 +6,7 @@ const { RegisterUser, LoginUser } = require("../controllers/UserController");
 
 // Import the avatar-upload middleware
 const { uploadAvatar } = require("../middlewares/AvatarUploadMiddleware");
+const { AuthMiddleware }  = require("../middlewares/AuthMiddleware");
 
 // Define the user routes
 
@@ -20,7 +21,7 @@ router.route("/register").post(uploadAvatar, RegisterUser);
  * POST /login
  * Logs in the user using the LoginUser controller function.
  */
-router.route("/login").post(LoginUser);
+router.route("/login").post(AuthMiddleware, LoginUser);
 
 // Export the router
 module.exports = router;
