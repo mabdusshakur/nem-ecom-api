@@ -17,7 +17,7 @@ const {
 
 // Import the product-image-upload middleware
 const { uploadImages } = require("../middlewares/ProductImageUploadMiddleware");
-
+const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
 
 // Define the product routes
 
@@ -37,25 +37,25 @@ router.route("/products/:id").get(getProductById);
  * POST /products
  * Creates a new product
  */
-router.route("/products").post(uploadImages, createProduct);
+router.route("/products").post(AuthMiddleware, uploadImages, createProduct);
 
 /**
  * PUT /products/:id
  * Updates a product by ID
  */
-router.route("/products/:id").put(uploadImages, updateProduct);
+router.route("/products/:id").put(AuthMiddleware, uploadImages, updateProduct);
 
 /**
  * DELETE /products/:id
  * Deletes a product by ID
  */
-router.route("/products/:id").delete(deleteProduct);
+router.route("/products/:id").delete(AuthMiddleware, deleteProduct);
 
 /**
  * DELETE /products/:id/images/:index
  * Deletes a product image by image index
  */
-router.route("/products/:id/images/:index").delete(deleteProductImage);
+router.route("/products/:id/images/:index").delete(AuthMiddleware, deleteProductImage);
 
 // Export the router
 module.exports = router;
