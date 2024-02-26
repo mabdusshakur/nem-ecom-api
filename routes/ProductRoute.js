@@ -57,5 +57,6 @@ router.route("/products/:id").delete(AuthMiddleware, deleteProduct);
  */
 router.route("/products/:id/images/:index").delete(AuthMiddleware, deleteProductImage);
 
+
 // Export the router
 module.exports = router;
