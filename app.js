@@ -30,5 +30,6 @@ const startServer = async () => {
     console.log("Error starting server: ", error);
   }
 };
+
 // Call the startServer function to start the server
 startServer();
