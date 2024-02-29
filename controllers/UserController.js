@@ -5,6 +5,12 @@ const jwt = require("jsonwebtoken");
 const RegisterUser = async (req, res) => {
   try {
     const { first_name, last_name, email, password } = req.body;
+    if(!first_name || !last_name || !email || !password) {
+      return res.status(400).json({
+        status: false,
+        message: "Please enter all fields",
+      });
+    }
     const user = new User({
       first_name,
       last_name,
