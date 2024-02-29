@@ -9,7 +9,7 @@ const AuthMiddleware = (req, res, next) => {
       res.status(401).json({ error: "Authorization required" });
     } else {
       if (req.auth) {
-        req.user = req.auth.user; // Assign user to req.user
+        req.user = req.auth.user;
       }
       next();
     }

@@ -1,3 +1,4 @@
+// Import Product model
 const Product = require("../models/Product");
 
 // Get all products

@@ -16,7 +16,8 @@ app.use("/api/v1/users", UserRouter);
 
 /**
  * Function to start the server
- */
+**/
+
 const startServer = async () => {
   try {
     // Connect to the database
