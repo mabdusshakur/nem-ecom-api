@@ -25,37 +25,37 @@ const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
  * GET /products
  * Returns all products
  */
-router.route("/products").get(getAllProducts);
+router.route("/").get(getAllProducts);
 
 /**
  * GET /products/:id
  * Returns a single product by ID
  */
-router.route("/products/:id").get(getProductById);
+router.route("/:id").get(getProductById);
 
 /**
  * POST /products
  * Creates a new product
  */
-router.route("/products").post(AuthMiddleware, uploadImages, createProduct);
+router.route("/").post(AuthMiddleware, uploadImages, createProduct);
 
 /**
  * PUT /products/:id
  * Updates a product by ID
  */
-router.route("/products/:id").put(AuthMiddleware, uploadImages, updateProduct);
+router.route("/:id").put(AuthMiddleware, uploadImages, updateProduct);
 
 /**
  * DELETE /products/:id
  * Deletes a product by ID
  */
-router.route("/products/:id").delete(AuthMiddleware, deleteProduct);
+router.route("/:id").delete(AuthMiddleware, deleteProduct);
 
 /**
  * DELETE /products/:id/images/:index
  * Deletes a product image by image index
  */
-router.route("/products/:id/images/:index").delete(AuthMiddleware, deleteProductImage);
+router.route("/:id/images/:index").delete(AuthMiddleware, deleteProductImage);
 
 // Export the router
 module.exports = router;
