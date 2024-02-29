@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const db_connect = require("./database/db");
 const UserRouter = require("./routes/UserRoute");
+const ProductRouter = require("./routes/ProductRoute");
 
 const app = express();
 const port = process.env.SERVER_PORT;
@@ -13,6 +14,10 @@ app.use("/uploads", express.static("uploads"));
 
 // Use UserRouter for handling user-related routes
 app.use("/api/v1/users", UserRouter);
+
+// Use ProductRouter for handling product-related routes
+app.use("/api/v1/products", ProductRouter);
+
 
 /**
  * Function to start the server
