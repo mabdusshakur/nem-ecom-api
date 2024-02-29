@@ -1,5 +1,5 @@
 // Import Product model
-const Product = require("../models/Product");
+const Product = require("../models/ProductModel");
 
 // Get all products
 const getAllProducts = async (req, res) => {
@@ -40,8 +40,8 @@ const createProduct = async (req, res) => {
       await product.save();
     }
     res.status(201).json(product);
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
+  } catch (err) {
+    res.status(500).json({ message: "Internal server error",  error : err.message });
   }
 };
 
