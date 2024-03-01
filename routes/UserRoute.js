@@ -39,12 +39,5 @@ router.route("/login").post(upload.none(), LoginUser);
  */
 router.route("/profile").get(upload.none(), AuthMiddleware, GetProfile);
 
-
-/**
- * POST /wishlist
- * Adds a product to the user's wishlist
- */
-router.route("/wishlist").post(upload.none(), AuthMiddleware, AddToWishlist); // problem
-
 // Export the router
 module.exports = router;
