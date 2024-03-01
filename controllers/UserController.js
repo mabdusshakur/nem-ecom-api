@@ -33,7 +33,7 @@ const LoginUser = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid credentials !" });
     }
     const jwt_token = jwt.sign({ user }, process.env.JWT_SECRET, {
       expiresIn: "1h",
