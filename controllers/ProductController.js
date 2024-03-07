@@ -42,7 +42,9 @@ const createProduct = async (req, res) => {
     }
     res.status(201).json(product);
   } catch (err) {
-    res.status(500).json({ message: "Internal server error",  error : err.message });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 };
 
@@ -99,7 +101,7 @@ const deleteProductImage = async (req, res) => {
     const imageName = product.images[index].url;
     // Delete the image from the uploads folder
     fs.unlinkSync(imageName);
-    
+
     product.images.splice(index, 1);
     await product.save();
     res.json(product);
