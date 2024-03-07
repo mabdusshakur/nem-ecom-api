@@ -18,6 +18,7 @@ const {
 // Import the product-image-upload middleware
 const { uploadImages } = require("../middlewares/ProductImageUploadMiddleware");
 const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
+const { isAdmin } = require("../middlewares/AdminMiddleware");
 
 // Define the product routes
 
@@ -43,7 +44,7 @@ router.route("/").post(AuthMiddleware, uploadImages, createProduct);
  * PUT /products/:id
  * Updates a product by ID
  */
-router.route("/:id").put(AuthMiddleware, uploadImages, updateProduct);
+router.route("/:id").put(AuthMiddleware, isAdmin, uploadImages, updateProduct);
 
 /**
  * DELETE /products/:id
