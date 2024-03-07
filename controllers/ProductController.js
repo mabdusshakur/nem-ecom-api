@@ -1,5 +1,6 @@
 // Import Product model
 const Product = require("../models/ProductModel");
+const fs = require("fs");
 
 // Get all products
 const getAllProducts = async (req, res) => {
@@ -95,6 +96,10 @@ const deleteProductImage = async (req, res) => {
     if (!product) {
       return res.status(404).json({ error: "Product not found" });
     }
+    const imageName = product.images[index].url;
+    // Delete the image from the uploads folder
+    fs.unlinkSync(imageName);
+    
     product.images.splice(index, 1);
     await product.save();
     res.json(product);
