@@ -103,8 +103,8 @@ const deleteProductImage = async (req, res) => {
     product.images.splice(index, 1);
     await product.save();
     res.json(product);
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
+  } catch (err) {
+    res.status(500).json({ message: "Internal server error", error: err.message});
   }
 };
 
