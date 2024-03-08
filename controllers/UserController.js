@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const RegisterUser = async (req, res) => {
   try {
     const { first_name, last_name, email, password } = req.body;
-    if(!first_name || !last_name || !email || !password) {
+    if (!first_name || !last_name || !email || !password) {
       return res.status(400).json({
         status: false,
         message: "Please enter all fields",
@@ -58,4 +58,8 @@ const GetProfile = async (req, res) => {
   res.status(200).json(req.user);
 };
 
-module.exports = { RegisterUser, LoginUser, GetProfile };
+const AddToWishlist = async (req, res) => {
+  res.status(200).json({ message: "Added to wishlist" });
+};
+
+module.exports = { RegisterUser, LoginUser, GetProfile, AddToWishlist };
