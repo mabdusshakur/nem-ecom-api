@@ -38,7 +38,7 @@ router.route("/:id").get(getProductById);
  * POST /products
  * Creates a new product
  */
-router.route("/").post(AuthMiddleware, uploadImages, createProduct);
+router.route("/").post(AuthMiddleware, isAdmin, uploadImages, createProduct);
 
 /**
  * PUT /products/:id
@@ -50,13 +50,15 @@ router.route("/:id").put(AuthMiddleware, isAdmin, uploadImages, updateProduct);
  * DELETE /products/:id
  * Deletes a product by ID
  */
-router.route("/:id").delete(AuthMiddleware, deleteProduct);
+router.route("/:id").delete(AuthMiddleware, isAdmin, deleteProduct);
 
 /**
  * DELETE /products/:id/images/:index
  * Deletes a product image by image index
  */
-router.route("/:id/images/:index").delete(AuthMiddleware, deleteProductImage);
+router
+  .route("/:id/images/:index")
+  .delete(AuthMiddleware, isAdmin, deleteProductImage);
 
 // Export the router
 module.exports = router;
