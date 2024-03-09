@@ -38,7 +38,6 @@ router.route("/login").post(upload.none(), LoginUser);
  */
 router.route("/profile").get(upload.none(), AuthMiddleware, GetProfile);
 
-
 /**
  * POST /wishlist
  * Adds a product to the user's wishlist
