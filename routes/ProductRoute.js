@@ -56,9 +56,7 @@ router.route("/:id").delete(AuthMiddleware, isAdmin, deleteProduct);
  * DELETE /products/:id/images/:index
  * Deletes a product image by image index
  */
-router
-  .route("/:id/images/:index")
-  .delete(AuthMiddleware, isAdmin, deleteProductImage);
+router.route("/:id/images/:index").delete(AuthMiddleware, isAdmin, deleteProductImage);
 
 // Export the router
 module.exports = router;
