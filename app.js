@@ -5,6 +5,7 @@ const db_connect = require("./database/db");
 const UserRouter = require("./routes/UserRoute");
 const ProductRouter = require("./routes/ProductRoute");
 const WishlistRouter = require("./routes/WishlistRoute");
+const CartRouter = require("./routes/CartRouter");
 
 const app = express();
 const port = process.env.SERVER_PORT;
