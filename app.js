@@ -23,6 +23,9 @@ app.use("/api/v1/products", ProductRouter);
 // Use WishlistRouter for handling wishlist-related routes
 app.use("/api/v1/wishlist", WishlistRouter);
 
+// Use CartRouter for handling cart-related routes
+app.use("/api/v1/cart", CartRouter);
+
 /**
  * Function to start the server
  * 
