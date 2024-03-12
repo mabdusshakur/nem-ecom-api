@@ -59,7 +59,15 @@ const GetProfile = async (req, res) => {
 };
 
 const AddToWishlist = async (req, res) => {
-  res.status(200).json({ message: "Added to wishlist" });
+  try {
+    res.status(200).json({ message: "Added to wishlist" });
+  } catch (error) {
+    res.status(500).json({
+      status: false,
+      message: "Internal Server Error !",
+      error: err.message,
+    });
+  }
 };
 
 module.exports = { RegisterUser, LoginUser, GetProfile, AddToWishlist };
