@@ -34,4 +34,9 @@ const AddToCart = async (req, res) => {
     });
   }
 };
+
+const allCartItems = async (req, res) => {
+ 
+}
+
 module.exports = { AddToCart };
