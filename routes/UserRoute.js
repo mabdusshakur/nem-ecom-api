@@ -32,11 +32,13 @@ router.route("/register").post(uploadAvatar, RegisterUser);
  */
 router.route("/login").post(upload.none(), LoginUser);
 
+
 /**
  * GET /profile
  * Returns the user's profile
  */
 router.route("/profile").get(upload.none(), AuthMiddleware, GetProfile);
+
 
 /**
  * POST /wishlist
