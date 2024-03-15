@@ -10,7 +10,6 @@ const {
   RegisterUser,
   LoginUser,
   GetProfile,
-  AddToWishlist,
 } = require("../controllers/UserController");
 
 // Import the avatar-upload middleware
