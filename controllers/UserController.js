@@ -58,4 +58,4 @@ const GetProfile = async (req, res) => {
   res.status(200).json(req.user);
 };
 
-module.exports = { RegisterUser, LoginUser, GetProfile, AddToWishlist };
+module.exports = { RegisterUser, LoginUser, GetProfile };
