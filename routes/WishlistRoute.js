@@ -1,15 +1,18 @@
-
 const express = require("express");
 const router = express.Router();
 
+// Use multer to handle form-data body values
+const multer = require("multer");
+const upload = multer();
+
 // Import the wishlist controller
 const { AddToWishlist } = require("../controllers/WishlistController");
-
+const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
 /**
  * POST /wishlist
  * Add to wishlist
  */
-router.route("/").post(AddToWishlist);
+router.route("/").post(upload.none(), AuthMiddleware, AddToWishlist);
 
 // Export the router
 module.exports = router;
