@@ -51,4 +51,4 @@ const allWishlistItems = async (req, res) => {
   }
 }
 
-module.exports = { AddToWishlist };
+module.exports = { AddToWishlist, allWishlistItems };
