@@ -6,7 +6,7 @@ const multer = require("multer");
 const upload = multer();
 
 // Import the wishlist controller
-const { AddToWishlist } = require("../controllers/WishlistController");
+const { AddToWishlist,allWishlistItems } = require("../controllers/WishlistController");
 const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
 /**
  * POST /wishlist
