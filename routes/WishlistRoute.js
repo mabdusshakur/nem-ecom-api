@@ -14,5 +14,7 @@ const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
  */
 router.route("/").post(upload.none(), AuthMiddleware, AddToWishlist);
 
+router.route("/").get(upload.none(), AuthMiddleware, allWishlistItems)
+
 // Export the router
 module.exports = router;
