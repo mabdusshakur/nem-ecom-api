@@ -31,7 +31,6 @@ router.route("/register").post(uploadAvatar, RegisterUser);
  */
 router.route("/login").post(upload.none(), LoginUser);
 
-
 /**
  * GET /profile
  * Returns the user's profile
