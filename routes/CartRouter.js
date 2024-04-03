@@ -8,7 +8,11 @@ const {
   AddToCart,
 } = require("../controllers/CartController");
 
-
+/**
+ * POST /carts
+ * Add to cart
+ */
+router.route("/").post(upload.none(), AddToCart);
 
 // Export the router
 module.exports = router;
