@@ -7,6 +7,7 @@ const upload = multer();
 const {
   AddToCart,
 } = require("../controllers/CartController");
+const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
 
 /**
  * POST /carts
