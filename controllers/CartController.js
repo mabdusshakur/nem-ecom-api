@@ -35,6 +35,7 @@ const AddToCart = async (req, res) => {
   }
 };
 
+// Get all cart items of user
 const allCartItems = async (req, res) => {
  
 }
