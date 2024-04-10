@@ -21,5 +21,6 @@ router.route("/").post(upload.none(), AuthMiddleware, AddToCart);
  */
 router.route("/").get(upload.none(), AuthMiddleware, allCartItems);
 
+
 // Export the router
 module.exports = router;
