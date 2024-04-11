@@ -53,4 +53,4 @@ const allCartItems = async (req, res) => {
   }
 }
 
-module.exports = { AddToCart };
+module.exports = { AddToCart, allCartItems };
