@@ -6,7 +6,7 @@ const multer = require("multer");
 const upload = multer();
 
 // Import the cart controller
-const { AddToCart } = require("../controllers/CartController");
+const { AddToCart, allCartItems } = require("../controllers/CartController");
 const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
 
 /**
