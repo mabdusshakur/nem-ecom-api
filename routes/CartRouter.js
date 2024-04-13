@@ -15,5 +15,11 @@ const { AuthMiddleware } = require("../middlewares/AuthMiddleware");
  */
 router.route("/").post(upload.none(), AuthMiddleware, AddToCart);
 
+/**
+ * GET /carts
+ * get all cart of user
+ */
+router.route("/").get(upload.none(), AuthMiddleware, allCartItems);
+
 // Export the router
 module.exports = router;
